@@ -1,5 +1,5 @@
 from flask import Flask
 
-SERVER = 'localhost'  # for master
+SERVER = '0.0.0.0'  # for master
 
 PORT = 5000  # for master
