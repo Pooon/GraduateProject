@@ -1,10 +1,11 @@
 from gevent import monkey
 monkey.patch_all()
 
-app = Flask(__name__)
-
+from flask import Flask
 from gevent.wsgi import WSGIServer
 from config import SERVER, PORT
+
+app = Flask(__name__)
 
 if __name__ == '__main__':
     app.debug = True
