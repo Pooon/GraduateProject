@@ -1,7 +1,8 @@
 from gevent import monkey
 monkey.patch_all()
 
-from api import app
+app = Flask(__name__)
+
 from gevent.wsgi import WSGIServer
 from config import SERVER, PORT
 
