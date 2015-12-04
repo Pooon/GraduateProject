@@ -3,6 +3,6 @@ from GraduateProject import app
 
 @app.route('/')
 def index():
-    return render_template('/hello.html', name = '6666666')
+    return 'Hello'
 
 import user
