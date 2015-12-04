@@ -3,7 +3,7 @@ monkey.patch_all()
 
 from GraduateProject import app
 from gevent.wsgi import WSGIServer
-from config import SERVER, PORT
+from GraduateProject.config import SERVER, PORT
 
 if __name__ == '__main__':
     app.debug = True
