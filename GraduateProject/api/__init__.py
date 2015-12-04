@@ -5,4 +5,4 @@ from GraduateProject import app
 def index():
     return 'Hello'
 
-# import user
+from .user import user
