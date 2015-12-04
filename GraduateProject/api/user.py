@@ -1,4 +1,4 @@
-from api import app
+from GraduateProject import app
 from flask import jsonify, request
 
 @app.route('/user',methods = ['GET'])
