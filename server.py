@@ -1,7 +1,7 @@
 from gevent import monkey
 monkey.patch_all()
 
-from api import app
+from GraduateProject import app
 from gevent.wsgi import WSGIServer
 from config import SERVER, PORT
 
