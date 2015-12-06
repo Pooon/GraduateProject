@@ -1,4 +1,3 @@
-from flask import Flask
 
 SERVER = '0.0.0.0'  # for master
 
@@ -9,3 +8,4 @@ MYSQL_PWD = ''
 MYSQL_DATABASE = ''
 MYSQL_REPLICA = ''
 MYSQL_HOST = ''
+MYSQL_CHARSET = 'utf8'
