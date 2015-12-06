@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-class category(object):
+class Category(object):
 
 	TABLE_NAME = 'category'
 

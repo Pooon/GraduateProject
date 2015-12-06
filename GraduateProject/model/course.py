@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-class course(object):
+class Course(object):
 
 	TABLE_NAME = 'course'
 
