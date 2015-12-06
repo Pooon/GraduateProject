@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 
 class course(object):
 
@@ -8,7 +9,6 @@ class course(object):
         userId = 'userId'
         title = 'title'
         categories = 'categories'
-        topics = 'topics'
         digest = 'digest'
         price = 'price'
 		
