@@ -5,6 +5,7 @@ from GraduateProject.config import (
     MYSQL_PWD,
     MYSQL_HOST,
     MYSQL_DATABASE,
+    MYSQL_CHARSET，
 )
 
 class MySQLConnectionWrap:
