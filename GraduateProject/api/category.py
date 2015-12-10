@@ -1,6 +1,7 @@
 from GraduateProject import app
 from GraduateProject.model import MySQLConnectionWrap
 from GraduateProject.model.category import Category
+from flask import request, jsonify
 
 class Error(object):
     CATEGORY_ERROR = {'err': 1001,
