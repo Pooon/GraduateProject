@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh" lang="zh">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>MCourses-首页</title>
+	<meta name="author" content="Qitao Lin">
+	<meta name="version" content="1.0">
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="./css/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="./css/slick-theme.css"/>
+	<link rel="stylesheet" type="text/css" href="./css/firstpage.css"/>
+</head>
+
+<body style="padding-top: 0px;">
+	<!-- im = IndexModule -->
+	<div class="im">
+		<div class="im-top-nav">
+			<div class="top-header">
+				<div class="logo">
+					<img class="logo-img" src="./images/Logo.png" alt="MCourses" width="500px" height="100px">
+				</div>
+				<div class="user-info">
+					<a class="login-btn">登录/注册</a>
+				</div>
+			</div>
+
+			<div class="top-nav">
+				<div class="all-courses-text">
+					<div class="list-icon">
+						<img src="./images/list2.png" width="16px" height="14px">
+					</div>
+					<span class="courses-text">全部课程</span>
+				</div>
+
+				<div class="courses-list">
+					<div class="list-left">
+						<div class="list-background"></div>
+						<div class="list-items">
+							<div class="item" id="item1">
+								<div class="curbg"></div>
+								<div class="inn">
+									<a href="http://www.baidu.com" target="_Blank" class="link-item">
+										计算机与互联网
+									</a>
+									<a href="http://www.baidu.com" target="_Blank" class="link-item-child">移动开发</a>
+									<a href="http://www.baidu.com" target="_Blank" class="link-item-child">Web开发</a>
+									<a href="http://www.baidu.com" target="_Blank" class="link-item-child">数据结构</a>
+								</div>
+							</div>
+							<div class="item" id="item2">
+								<div class="curbg"></div>
+								<div class="inn">
+									<a href="http://www.baidu.com" target="_Blank" class="link-item">
+										金融与经济
+									</a>
+									<a href="http://www.baidu.com" target="_Blank" class="link-item-child">投资</a>
+									<a href="http://www.baidu.com" target="_Blank" class="link-item-child">微观经济学</a>
+									<a href="http://www.baidu.com" target="_Blank" class="link-item-child">会计入门</a>
+								</div>
+							</div>
+							<div class="item" id="item3">
+								<div class="curbg"></div>
+								<div class="inn">
+									<a href="http://www.baidu.com" target="_Blank" class="link-item">
+										人文与社会
+									</a>
+									<a href="http://www.baidu.com" target="_Blank" class="link-item-child">中国近代史</a>
+									<a href="http://www.baidu.com" target="_Blank" class="link-item-child">西方哲学史</a>
+								</div>
+							</div>
+							<div class="item" id="item4">
+								<div class="curbg"></div>
+								<div class="inn">
+									<a href="http://www.baidu.com" target="_Blank" class="link-item">
+										语言与文化
+									</a>
+									<a href="http://www.baidu.com" target="_Blank" class="link-item-child">考研</a>
+									<a href="http://www.baidu.com" target="_Blank" class="link-item-child">托福雅思</a>
+									<a href="http://www.baidu.com" target="_Blank" class="link-item-child">GRE/GMAT</a>
+								</div>
+							</div>
+							<div class="item" id="item5">
+								<div class="curbg"></div>
+								<div class="inn" style="border-bottom:none;">
+									<a href="http://www.baidu.com" target="_Blank" class="link-item">
+										艺术与体育
+									</a>
+									<a href="http://www.baidu.com" target="_Blank" class="link-item-child">吉他入门</a>
+									<a href="http://www.baidu.com" target="_Blank" class="link-item-child">架子鼓</a>
+									<a href="http://www.baidu.com" target="_Blank" class="link-item-child">无器械健身</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="list-right"></div>
+				</div>
+
+				<div class="search">
+					<div class="search-box">
+						<div class="search-icon">
+							<img src="./images/search.png" width="20px" height="18px">
+						</div>
+						<input class="search-input" type="text">
+						<label class="search-label">搜索</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="im-slide-module">
+			<img class="img img-1">
+			<img class="img img-2">
+			<img class="img img-3">
+		</div>
+	</div>
+
+	<script type="text/javascript" src="./javascript/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="./javascript/slick.min.js"></script>
+	<script type="text/javascript">
+		$('.im-slide-module').slick({
+			dots: true,
+			infinite: true,
+			speed: 500,
+			fade: true,
+			cssEase: 'linear'
+		});
+	</script>
+</body>
+</html>

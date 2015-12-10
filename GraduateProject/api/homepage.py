@@ -4,4 +4,4 @@ from GraduateProject import app
 @app.route('/')
 def getHompage():
 	
-	return render_template('hello.html', name = 'linqitao')
+	return render_template('FisrtPage.html')
