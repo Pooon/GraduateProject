@@ -14,7 +14,6 @@ def getCategoryDetail():
 
 	if category_id is None:
 
-		print '400 here'
-		return jsonify(stat = 0, **Error.CATEGORY_ERROR), 400
+		return jsonify(stat = 0, **Error.CATEGORY_ERROR), 403
 
 	return 'category not null'
