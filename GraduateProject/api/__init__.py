@@ -1,7 +1,9 @@
 import homepage
 import user
 import category
-from flask import jsonify
+from flask import Blueprint, jsonify
+
+api = Blueprint('/api', __name__, template_folder='')
 
 """Define global error code here"""
 G_ERR = {
