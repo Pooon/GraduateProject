@@ -13,6 +13,8 @@ def getCategoryDetail():
 	category_id = request.args['categoryId']
 
 	if category_id is None:
+
+		print '400 here'
 		return jsonify(stat = 0, **Error.CATEGORY_ERROR), 400
 
 	return 'category not null'
