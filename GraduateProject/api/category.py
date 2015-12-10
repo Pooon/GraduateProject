@@ -7,4 +7,7 @@ def getCategoryDetail():
 	
 	category_id = request.args['categoryId']
 
-	return 'Not Course'
+	if category_id is None:
+		return jsonify(stat = 0, ''), 400
+
+	return 'category not null'
