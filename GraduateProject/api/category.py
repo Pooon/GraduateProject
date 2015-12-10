@@ -12,7 +12,7 @@ def getCategoryDetail():
 	
 	category_id = request.args['categoryId']
 
-	if category_id is None:
+	if not (len(category_id) == 24):
 
 		return jsonify(stat = 0, **Error.CATEGORY_ERROR), 403
 
