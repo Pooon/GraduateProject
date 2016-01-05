@@ -5,7 +5,7 @@ Base Url: http://120.24.56.172:5000/
 ##User
 
 ###Log in: '/login'
-><b params />:  
+> <b> params </b>:  
 >  'email': char  
 >  'password': char  
 >  'remember_me' : boolean  
