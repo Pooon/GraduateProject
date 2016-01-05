@@ -50,7 +50,7 @@ def register():
 #	return render_template('register.html', form=form)
 	if request.method == "GET":
 		#show register form
-		return 200
+		return '404'
 	elif request.method == "POST":
 		email = request.form.get('email')
 		password = request.form.get('password')
