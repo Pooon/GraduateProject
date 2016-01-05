@@ -1,6 +1,8 @@
 import homepage
 import user
 import category
+import course
+
 from flask import Blueprint, jsonify
 
 api = Blueprint('/api', __name__, template_folder='')
