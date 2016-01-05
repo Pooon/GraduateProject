@@ -9,6 +9,7 @@ class User(UserMixin, db.Model):
 	username = db.Column(db.String(64), index=True, unique=True)
 	password_hash = db.Column(db.String(256), index=True, unique=True)
 	email = db.Column(db.String(64), index=True, unique=True)
+	#avatar_url = db.Column(db.String(200))
 	
 	@property
 	def password(self):
@@ -23,6 +24,10 @@ class User(UserMixin, db.Model):
 
 	def __repr__(self):
 		return '<User %r>' % (self.username)
+
+	#override method get_id in UserMixin
+	def get_id(self):
+		return self.user_id
 
 	@login_manager.user_loader
 	def load_user(user_id):

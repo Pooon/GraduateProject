@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from GraduateProject import app, db
+from user import User
 from course import Course
 
 class Category(db.Model):

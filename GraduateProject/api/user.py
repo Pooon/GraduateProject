@@ -1,5 +1,6 @@
 from GraduateProject import app
-from flask import jsonify, request, url_for, render_template, flash, redirect
+from flask import jsonify, request, url_for, render_template, flash, redirect, make_response, jsonify
+import json
 from GraduateProject import app, db
 from flask.ext.login import login_user, logout_user, login_required
 from GraduateProject.forms.auth_forms import LoginForm, RegistrationForm
@@ -26,7 +27,7 @@ def user_login():
 		user = User.query.filter_by(email=email).first()
 		if user is not None and user.verify_password(password):
 			login_user(user, remember_me)
-			return '200'
+			return make_response(json.dumps({'username':user.username}), 200)
 		return '403'		
 
 
