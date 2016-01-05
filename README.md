@@ -11,8 +11,8 @@ Base Url: http://120.24.56.172:5000/
 >  'remember_me' : boolean  
 
 <b> response:</b>  
->  '202' : Log in successfully  
->  '203' : Invalid username or password  
+>  '200' : Log in successfully  
+>  '403' : Invalid username or password  
 
 ###Register:
 <b> params: </b>    
@@ -21,5 +21,5 @@ Base Url: http://120.24.56.172:5000/
 >  'password' : char  
 
 <b> response:</b>    
->  '202' : Register successfully  
->  '203' : Fail  
+>  '200' : Register successfully  
+>  '403' : Fail  
