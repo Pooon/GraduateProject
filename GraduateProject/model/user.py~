@@ -26,10 +26,10 @@ class User(UserMixin, db.Model):
 		return '<User %r>' % (self.username)
 
 	#override method get_id in UserMixin
-	def get_id(self);
+	def get_id(self):
 		return self.user_id
 
 	@login_manager.user_loader
 	def load_user(user_id):
-		return User.query.filter_by(User.user_id==int(user_id)).first()
+		return User.query.get(int(user_id)).first()
 

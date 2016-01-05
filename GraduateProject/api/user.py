@@ -35,7 +35,7 @@ def user_login():
 @login_required
 def log_out():
 	logout_user()
-	return redirect(url_for('/'))
+	return '200'
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
