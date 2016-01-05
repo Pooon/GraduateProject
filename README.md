@@ -1,4 +1,4 @@
-# GraduateProject
+# API List
 
 Base Url: http://120.24.56.172:5000/
 
@@ -23,3 +23,32 @@ Base Url: http://120.24.56.172:5000/
 <b> response:</b>    
 >  '200' : Register successfully  
 >  '403' : Fail  
+
+
+=========================
+
+#数据库
+
+###User
+user      |
+----------|
+user_id   | 
+username  |
+pwd_hash  |
+email     |
+
+###Course
+course    |
+----------|
+course_id |
+course_name|
+course_abstract(简介)|
+tutor_id|
+catogory_id|
+
+###Category
+catrgory|
+--------|
+category_id|
+title|
+
