@@ -9,13 +9,15 @@ app = Flask(__name__)
 app.config.from_object(Config)
 Config.init_app(app)
 db = SQLAlchemy(app)
-db.drop_all()
-db.create_all()
 
 bootstrap = Bootstrap(app)
 
 login_manager = LoginManager(app)
 login_manager.session_protection = 'strong'
 login_manager.login_view = 'login'
+
+@login_manager.user_loader
+def load_user(user_id):
+	return User.query.get(int(user_id))
 
 import api

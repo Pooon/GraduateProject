@@ -1,7 +1,7 @@
 from gevent import monkey
 monkey.patch_all()
 
-from GraduateProject import app, db, login_manager
+from GraduateProject import app, db
 from gevent.wsgi import WSGIServer
 from GraduateProject.config import SERVER, PORT
 from GraduateProject.model.user import User
@@ -12,10 +12,6 @@ manager = Manager(app)
 def make_shell_context():
     return dict(app=app, db=db)
 manager.add_command("shell", Shell(make_context=make_shell_context))
-
-@login_manager.user_loader
-def load_user(user_id):
-	return User.query.get(int(user_id))
 
 if __name__ == '__main__':
     app.debug = True

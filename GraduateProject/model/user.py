@@ -24,3 +24,7 @@ class User(UserMixin, db.Model):
 	def __repr__(self):
 		return '<User %r>' % (self.username)
 
+	@login_manager.user_loader
+	def load_user(user_id):
+		return User.query.filter_by(User.user_id==int(user_id)).first()
+
