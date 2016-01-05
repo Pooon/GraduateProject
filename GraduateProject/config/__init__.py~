@@ -10,4 +10,4 @@ MYSQL_REPLICA = ''
 MYSQL_HOST = ''
 MYSQL_CHARSET = 'utf8'
 
-from GraduateProject.config import config
+from config import config

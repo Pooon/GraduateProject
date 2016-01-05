@@ -9,6 +9,8 @@ app = Flask(__name__)
 app.config.from_object(Config)
 Config.init_app(app)
 db = SQLAlchemy(app)
+db.drop_all()
+db.create_all()
 
 bootstrap = Bootstrap(app)
 

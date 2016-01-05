@@ -1,0 +1,6 @@
+# -*- coding: utf-8 -*-
+from GraduateProject.config import config
+from  flask.ext.sqlalchemy import SQLAlchemy
+from GraduateProject import app
+
+db = SQLAlchemy
