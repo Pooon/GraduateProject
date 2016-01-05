@@ -14,7 +14,7 @@ Base Url: http://120.24.56.172:5000/
 >  '200' : Log in successfully  
 >  '403' : Invalid username or password  
 
-###Register:
+###Register: '/register'
 <b> params: </b>    
 >  'email': char  
 >  'username' : char  
