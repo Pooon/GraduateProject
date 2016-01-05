@@ -1,6 +1,7 @@
 from flask import render_template
 from GraduateProject import app
 from GraduateProject.model.course import Course
+from flask import request, jsonify
 
 class Error(object):
     ID_ERROR = {'err': ERROR_COURSE + 1,
@@ -9,7 +10,7 @@ class Error(object):
                  'msg': 'Course is not found'}
     NOT_PERMITTED = {'err': ERROR_COURSE + 3,
                      'msg': 'Course is not permitted'}
-                     
+
 @app.route('/')
 def getHompage():
 	
