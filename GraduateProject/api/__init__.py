@@ -15,6 +15,8 @@ G_ERR = {
     '404': {'err': 3, 'msg': 'Not Found'},
 }
 
+ERROR_COURSE = 1800
+
 """Define api error handlers"""
 @api.errorhandler(400)
 def handle_400(e):
