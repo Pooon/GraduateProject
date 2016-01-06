@@ -7,6 +7,7 @@ class Lecture(db.Model):
 
 	lecture_id = db.Column(db.Integer, primary_key=True)
 	lecture_name = db.Column(db.String(64), index=True)
+	order = db.Column(db.Integer)
 	lecture_abstract = db.Column(db.String(600))
 	course_id = db.Column(db.Integer, db.ForeignKey('course.course_id'))
 	video_url = db.Column(db.String(600))
