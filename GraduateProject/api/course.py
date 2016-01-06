@@ -21,4 +21,4 @@ def getCourseDetail():
     if course is not None:
         return render_template('lecturePlaying.html'，course = course)
 
-	return jsonify(stat=0, **Error.ID_ERROR), 400
+    return jsonify(stat=0, **Error.ID_ERROR), 400
