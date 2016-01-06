@@ -1,8 +1,11 @@
 from flask import render_template
 from GraduateProject import app
-from GraduateProject.model.course import Course
+
 from flask import request, jsonify
 from . import ERROR_COURSE
+
+from GraduateProject.model.course import Course
+from GraduateProject.model.lecture import Lecture
 
 class Error(object):
     ID_ERROR = {'err': ERROR_COURSE + 1,
@@ -19,7 +22,9 @@ def getCourseDetail():
     course_id = request.args.get('courseId','',type=str)
     course = Course.query.get(int(course_id))
 
-    if course is not None:
-        return render_template('LecturePlaying.html',course = course)
+    lectures = Lecture.query.filter_by(course_id = course_id).order_by(Lecture.lecture_id)
+
+    if course is not None and lectures is not None:
+        return render_template('LecturePlaying.html',course = course,lecture = lectures)
 
     return jsonify(stat=0,**Error.ID_ERROR), 400
