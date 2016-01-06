@@ -53,6 +53,9 @@
     padding-top: 10px;
 
   }
+  .navbar{
+    margin-bottom: 0;
+  }
 </style>
 </head>
 
@@ -85,6 +88,7 @@
     <button type="submit" class="btn btn-default">搜索</button>
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <input type="button" class="btn btn-primary" data-toggle="modal" data-target="#enter" value="登录/注册" />
+
   </form>
 </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid -->
@@ -272,20 +276,20 @@
           <div class="login-body">
             <form id="login-form" method="post" action="login">
               <div class="form-group">
-                <input type="name" value="" class="form-control" name="email" id="input-name" placeholder="请输入邮箱">
+                <input type="text" value="" class="form-control" name="email" id="input-name" placeholder="请输入邮箱">
               </div>
               <div class="form-group">
                 <input type="password" value="" class="form-control" name="password" id="input-password" placeholder="请输入密码">
               </div>
               <div class="form-froup">
-                <div class="checkbox">
+                <div class="checkbox"> 
                   <label>
                     <input type="checkbox" name="remember_me"> 记住我的用户名
                   </label>
                 </div>
               </div>
               <div class="form-group">
-                <button type="submit" class="btn btn-success" data-dismiss="modal" onclick="checkUser();">登录</button>
+                <input type="submit" class="btn btn-success" data-dismiss="modal" onclick="checkUser();" value="提交" />
               </div>
             </form>
           </div>
@@ -313,6 +317,9 @@
          return false;
         }
         document.getElementById("login-form").submit();
+        // $.ajaxPost(url,{email:en,},function(json){
+
+        // })
     }  
 </script> 
 
