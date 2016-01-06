@@ -19,7 +19,7 @@ def user_login():
 #	return render_template('login.html', form = form)
 	if request.method == "GET":
 		#show login form
-		return '200'
+		return '404'
 	elif request.method == "POST":
 		email = request.form.get('email')
 		password = request.form.get('password')
@@ -27,7 +27,7 @@ def user_login():
 		user = User.query.filter_by(email=email).first()
 		if user is not None and user.verify_password(password):
 			login_user(user, remember_me)
-			return make_response(json.dumps({'username':user.username}), 200)
+			return redirect(request.args.get('next') or url_for('getHompage'))
 		return '403'		
 
 
@@ -35,7 +35,7 @@ def user_login():
 @login_required
 def log_out():
 	logout_user()
-	return '200'
+	return redirect(request.args.get('next') or url_for('getHompage'))
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -63,5 +63,5 @@ def register():
 					password=password)
 		db.session.add(user)
 		db.session.commit()
-		return '200'
+		return redirect(request.args.get('next') or url_for('getHompage'))
 
