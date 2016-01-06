@@ -17,7 +17,7 @@ class Error(object):
 def getCourseDetail():
 
     course_id = request.args.get('courseId','',type=str)
-    course = Course.query.filter_by(int(course_id))
+    course = Course.query.get(int(course_id))
 
     if course is not None:
         return render_template('lecturePlaying.html',course = course)
