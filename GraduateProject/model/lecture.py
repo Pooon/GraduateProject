@@ -14,3 +14,14 @@ class Lecture(db.Model):
 
 	def __repr__(self):
 		return '<Lecture %r>' % (self.lecture_name)
+
+	@property
+	def to_json(self):
+		return {
+			'lecture_id': self.lecture_id,
+			'lecture_name': self.lecture_name,
+			'course_id': self.course_id,
+			'order': self.order,
+			'video_url': self.video_url,
+			'lecture_abstract': self.lecture_abstract,
+		}

@@ -38,6 +38,6 @@ def testGetCourseDetail():
     lectures = Lecture.query.filter_by(course_id = course_id).order_by(Lecture.lecture_id)
 
     if course is not None and lectures is not None:
-        return jsonify(stat = 1,course = course,lecture = lectures),200
+        return jsonify(stat = 1,course = course.to_json,lecture = [i.to_json for i in lectures.all()]),200
 
     return jsonify(stat=0,**Error.ID_ERROR), 400
