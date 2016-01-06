@@ -58,6 +58,9 @@
   .modal-header{
     border-bottom: none;
   }
+  .navbar{
+    margin-bottom: 0;
+  }
 </style>
 </head>
 
@@ -97,6 +100,7 @@
       <input type="button" class="btn btn-primary" data-toggle="modal" data-target="#enter" value="登录/注册" />
     {% endif %}
   </form>
+
 </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid -->
 </nav>
@@ -313,6 +317,7 @@
                 <form id="register-form" method="post" action="register">
               <div class="form-group">
                 <input type="name" value="" class="form-control" name="email" id="register-input-email" placeholder="请输入登录邮箱">
+                <input type="text" value="" class="form-control" name="email" id="input-name" placeholder="请输入邮箱">
               </div>
               <div class="form-group">
                 <input type="name" value="" class="form-control" name="username" id="register-input-username" placeholder="请输入昵称">
@@ -325,6 +330,15 @@
               </div>
               <div class="form-group">
                 <input type="submit" class="btn btn-success" data-dismiss="modal" onclick="checkRegisterUser();" value="注册" />
+              <div class="form-froup">
+                <div class="checkbox"> 
+                  <label>
+                    <input type="checkbox" name="remember_me"> 记住我的用户名
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="submit" class="btn btn-success" data-dismiss="modal" onclick="checkUser();" value="提交" />
               </div>
             </form>
               </div>
