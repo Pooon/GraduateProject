@@ -2,6 +2,7 @@ from flask import render_template
 from GraduateProject import app
 from GraduateProject.model.course import Course
 from flask import request, jsonify
+from . import ERROR_COURSE
 
 class Error(object):
     ID_ERROR = {'err': ERROR_COURSE + 1,
