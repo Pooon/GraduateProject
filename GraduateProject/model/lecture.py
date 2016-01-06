@@ -9,6 +9,7 @@ class Lecture(db.Model):
 	lecture_name = db.Column(db.String(64), index=True)
 	lecture_abstract = db.Column(db.String(600))
 	course_id = db.Column(db.Integer, db.ForeignKey('course.course_id'))
+	video_url = db.Column(db.String(600))
 
 	def __repr__(self):
 		return '<Lecture %r>' % (self.coursename)

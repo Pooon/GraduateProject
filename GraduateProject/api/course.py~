@@ -18,7 +18,7 @@ def getCourseDetail():
 	course_id = request.args.get('courseId', '', type=str)
 	course = Course.query.filter_by(course_id).first()
 
-	if course is not None
+	if course is not None:
 		return render_template('lecturePlaying.html'，course = course)
 
 	return jsonify(stat=0, **Error.ID_ERROR), 400
