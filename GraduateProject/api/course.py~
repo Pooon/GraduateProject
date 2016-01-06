@@ -2,6 +2,7 @@ from flask import render_template
 from GraduateProject import app
 from GraduateProject.model.course import Course
 from flask import request, jsonify
+from . import ERROR_COURSE
 
 class Error(object):
     ID_ERROR = {'err': ERROR_COURSE + 1,
@@ -15,10 +16,14 @@ class Error(object):
 @app.route('/courseDetail',methods=['GET'])
 def getCourseDetail():
 
-	course_id = request.args.get('courseId', '', type=str)
-	course = Course.query.filter_by(course_id).first()
+    course_id = request.args.get('courseId','',type=str)
+    course = Course.query.filter_by(course_id).first()
 
-	if course is not None:
-		return render_template('lecturePlaying.html'，course = course)
+    if course is not None:
+        return render_template('lecturePlaying.html',course = course)
 
+<<<<<<< HEAD
 	return jsonify(stat=0, **Error.ID_ERROR), 400
+=======
+    return jsonify(stat=0,**Error.ID_ERROR), 400
+>>>>>>> 28f8c480143a1a2f28ea58c4311e2e7bfec76adf
