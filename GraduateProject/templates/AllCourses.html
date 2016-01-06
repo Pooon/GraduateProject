@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh" lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MCourses</title>
+    <!-- CSS -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="staic/css/allcourses.css"/>
+    <!--JavaScript-->
+    <script src="staics/scripts/jquery.min.js"></script>
+    <script src="static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+      body{
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+      .carousel{
+        height: 300px;
+        background-color:#000; 
+        margin-bottom: 20px;
+      }
+      .carousel .item{
+        height: 300px;
+        background-color:#000; 
+      }
+      .carousel img{
+        width: 100%;
+        background-color:#000; 
+      }
+      #introduction-container .col-md-3{
+        text-align: center;
+      }
+      .divider{
+        margin:40px 0; 
+      }
+      .modal-footer{
+        border-top: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top"  style="background:white">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- <a class="navbar-brand" href="./images/logo.png"></a> -->
+          <img src="static/images/logo3.png">
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="#">首页</a></li>
+            <li class="active"><a href="#">全部课程 <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">我的课程</a></li>
+            <li><a href="#">我要开课</a></li>
+            <!-- <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li> -->
+          </ul>
+
+
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="请输入关键字进行搜索">
+            </div>
+            <button type="submit" class="btn btn-default">搜索</button>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <button class="btn btn-primary" data-toggle="modal" data-target="#enter">登录/注册</button>
+          </form>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    
+    <div class="top-nav">
+    <div class="all-courses-text">
+      <div class="list-icon">
+        <img src="static/images/list2.png" width="16px" height="14px">
+      </div>
+      <span class="courses-text"><a href="###">全部课程</a>
+      </span>
+    </div>
+    <div class="courses-list">
+      <div class="list-left">
+        <div class="list-background"></div>
+        <div class="list-items">
+          <div class="item" id="item1">
+            <div class="curbg"></div>
+            <div class="inn">
+              <a href="http://www.baidu.com" target="_Blank" class="link-item">
+                计算机与互联网
+              </a>
+              <a href="http://www.baidu.com" target="_Blank" class="link-item-child">移动开发</a>
+              <a href="http://www.baidu.com" target="_Blank" class="link-item-child">Web开发</a>
+              <a href="http://www.baidu.com" target="_Blank" class="link-item-child">数据结构</a>
+            </div>
+          </div>
+           <div class="item" id="item2">
+            <div class="curbg"></div>
+             <div class="inn">
+              <a href="http://www.baidu.com" target="_Blank" class="link-item">
+                金融与经济
+              </a>
+              <a href="http://www.baidu.com" target="_Blank" class="link-item-child">投资</a>
+              <a href="http://www.baidu.com" target="_Blank" class="link-item-child">微观经济学</a>
+              <a href="http://www.baidu.com" target="_Blank" class="link-item-child">会计入门</a>
+            </div>
+          </div>
+          <div class="item" id="item3">
+            <div class="curbg"></div>
+            <div class="inn">
+              <a href="http://www.baidu.com" target="_Blank" class="link-item">
+                人文与社会
+              </a>
+              <a href="http://www.baidu.com" target="_Blank" class="link-item-child">中国近代史</a>
+              <a href="http://www.baidu.com" target="_Blank" class="link-item-child">西方哲学史</a>
+            </div>
+          </div>
+          <div class="item" id="item4">
+            <div class="curbg"></div>
+            <div class="inn">
+              <a href="http://www.baidu.com" target="_Blank" class="link-item">
+                语言与文化
+              </a>
+              <a href="http://www.baidu.com" target="_Blank" class="link-item-child">考研</a>
+              <a href="http://www.baidu.com" target="_Blank" class="link-item-child">托福雅思</a>
+              <a href="http://www.baidu.com" target="_Blank" class="link-item-child">GRE/GMAT</a>
+            </div>
+          </div>
+          <div class="item" id="item5">
+            <div class="curbg"></div>
+            <div class="inn" style="border-bottom:none;">
+              <a href="http://www.baidu.com" target="_Blank" class="link-item">
+                艺术与体育
+              </a>
+              <a href="http://www.baidu.com" target="_Blank" class="link-item-child">吉他入门</a>
+              <a href="http://www.baidu.com" target="_Blank" class="link-item-child">架子鼓</a>
+              <a href="http://www.baidu.com" target="_Blank" class="link-item-child">无器械健身</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="list-right"></div>
+    </div>
+  </div>
+
+   <div class="container" id="courses-container">
+      <div class="row">
+        <div class="col-sm-6 col-md-3">
+          <div class="thumbnail">
+            <a href="#"><img src="./images/course1.jpg"></a>
+            <div class="caption">
+              <h4>财务管理</h4>
+              <p><a href="#" class="glyphicon glyphicon-user">&nbsp100人参加</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="thumbnail">
+            <a href="#"><img src="./images/course2.jpg"></a>
+            <div class="caption">
+              <h4>C语言程序设计</h4>
+              <p><a href="#" class="glyphicon glyphicon-user">&nbsp100人参加</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="thumbnail">
+            <a href="#"><img src="./images/course3.jpg"></a>
+            <div class="caption">
+              <h4>物联网概论</h4>
+              <p><a href="#" class="glyphicon glyphicon-user">&nbsp100人参加</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="thumbnail">
+            <a href="#"><img src="./images/course4.png"></a>
+            <div class="caption">
+              <h4>数据结构</h4>
+              <p><a href="#" class="glyphicon glyphicon-user">&nbsp100人参加</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="thumbnail">
+            <a href="#"><img src="./images/course5.jpg"></a>
+            <div class="caption">
+              <h4>金融学</h4>
+              <p><a href="#" class="glyphicon glyphicon-user">&nbsp100人参加</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="thumbnail">
+            <a href="#"><img src="./images/course6.jpg"></a>
+            <div class="caption">
+              <h4>电力学</h4>
+              <p><a href="#" class="glyphicon glyphicon-user">&nbsp100人参加</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="thumbnail">
+            <a href="#"><img src="./images/course7.jpg"></a>
+            <div class="caption">
+              <h4>电工学</h4>
+              <p><a href="#" class="glyphicon glyphicon-user">&nbsp100人参加</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="thumbnail">
+            <a href="#"><img src="./images/course8.jpg"></a>
+            <div class="caption">
+              <h4>体育与健康</h4>
+              <p><a href="#" class="glyphicon glyphicon-user">&nbsp100人参加</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    <!--分页-->
+    <ul class="pagination">
+      <li><a href="#">&laquo;</a></li>
+      <li class="active"><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li><a href="#">&raquo;</a></li>
+    </ul>
+
+    </div>
+
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+          <ul class="nav navbar-nav">
+            <li><a>版权：毕业小分队</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#about-us">关于我们</a></li>
+            <li><a href="#">问题反馈</a></li>
+            <li><a href="#">帮助中心</a></li>
+          </ul>
+      </div>
+    </nav>
+
+    <div class="modal fade" id="about-us">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">关于我们</h4>
+          </div>
+          <div class="modal-body">
+            <p>这是我们毕业小分队的毕业设计网站：MCourses,我们会慢慢完善的……</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-dismiss="modal">了解了</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="enter">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="login-title" style="text-align:center">
+              <h4>登录</h4>
+            </div>
+            <div class="login-body">
+              <form id="login-form" action="#" method="post">
+                <div class="form-group">
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="请输入手机或邮箱">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputPassword3" placeholder="请输入密码">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox"> 记住我的用户名
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-success" data-dismiss="modal">了解了</button>
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+  </body>
+</html>

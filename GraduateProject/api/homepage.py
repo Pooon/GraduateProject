@@ -12,4 +12,4 @@ def getHompage():
 @app.route('/allCourse',methods=['GET'])
 def allCourse():
 
-	return render_template('showAll.html')
+	return render_template('AllCourses.html')
