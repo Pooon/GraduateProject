@@ -15,11 +15,14 @@
   <style type="text/css">
     body{
       padding-top: 50px;
-
+      
   }
   footer{
     background-color: #9d9d9d;
     height: 60px;
+  }
+  .navbar{
+    margin-bottom: 0;
   }
   .carousel{
     height: 423px;
@@ -51,7 +54,9 @@
   }
   .footer-text{
     padding-top: 10px;
-
+  }
+  .modal-header{
+    border-bottom: none;
   }
 </style>
 </head>
@@ -66,13 +71,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
+          <!-- <a class="navbar-brand" href="./images/logo.png"></a> -->
           <img src="static/images/logo3.png">
         </div>
 
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
-      <li><a href="allCourse">全部课程</a></li>
+      <li><a href="/allCourse">全部课程</a></li>
       <li><a href="#">我的课程</a></li>
       <li><a href="#">我要开课</a></li>
     </ul>
@@ -84,7 +90,12 @@
     </div>
     <button type="submit" class="btn btn-default">搜索</button>
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-    <input type="button" class="btn btn-primary" data-toggle="modal" data-target="#enter" value="登录/注册" />
+    {% if current_user.is_authenticated %}
+        <p> {{ current_user.username}} </p>
+        <a href="{{ url_for('log_out')}}">Sign Out</a>
+    {% else %}
+      <input type="button" class="btn btn-primary" data-toggle="modal" data-target="#enter" value="登录/注册" />
+    {% endif %}
   </form>
 </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid -->
@@ -232,7 +243,7 @@
   </div>
 
 
-  <div class="navbar navbar-default" role="navigation" style="background-color:#e5e5e5">
+  <div class="navbar navbar-default navbar-static-bottom" role="navigation" style="background-color:#e5e5e5">
     <div class="container">
       <ul class="nav navbar-nav">
         <li><a>© 毕业小分队&nbsp&nbsp&nbsp</a></li>
@@ -252,7 +263,7 @@
           <h4 class="modal-title">关于我们</h4>
         </div>
         <div class="modal-body">
-          <p>这是我们毕业小分队的毕业设计网站：MCourses,我们会慢慢完善的啦……</p>
+          <p>这是我们毕业小分队的毕业设计网站：MCourses,我们会慢慢完善的……</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-success" data-dismiss="modal">了解了</button>
@@ -266,35 +277,67 @@
       <div class="modal-content">
         <div class="modal-header" style="text-align:center">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title">登录</h4>
+          <!-- <h4 class="modal-title">登录</h4> -->
+          <ul class="nav nav-tabs" role="tablist">
+              <li id="signin-li" class="active"><a href="#signin-tab" role="tab" data-toggle="tab">登录</a></li>
+              <li id="signup-li"><a href="#signup-tab" role="tab" data-toggle="tab">注册</a></li>
+            </ul>
         </div>
         <div class="modal-body">
           <div class="login-body">
-            <form id="login-form" method="post" action="login">
+            
+
+            <div class="tab-content" id="signin-signup-tab">
+              <div class="tab-pane active" id="signin-tab">
+                <form id="login-form" method="post" action="login">
+                  <div class="form-group">
+                    <input type="name" value="" class="form-control" name="email" id="input-name" placeholder="请输入邮箱">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" value="" class="form-control" name="password" id="input-password" placeholder="请输入密码">
+                  </div>
+                  <div class="form-froup">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="remember_me"> 记住我的用户名
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="submit" class="btn btn-success" data-dismiss="modal" onclick="checkUser();" value="登录" />
+                  </div>
+                </form>
+              </div>
+
+              <div class="tab-pane" id="signup-tab">
+                <form id="register-form" method="post" action="register">
               <div class="form-group">
-                <input type="name" value="" class="form-control" name="email" id="input-name" placeholder="请输入邮箱">
+                <input type="name" value="" class="form-control" name="email" id="register-input-email" placeholder="请输入登录邮箱">
               </div>
               <div class="form-group">
-                <input type="password" value="" class="form-control" name="password" id="input-password" placeholder="请输入密码">
-              </div>
-              <div class="form-froup">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" name="remember_me"> 记住我的用户名
-                  </label>
-                </div>
+                <input type="name" value="" class="form-control" name="username" id="register-input-username" placeholder="请输入昵称">
               </div>
               <div class="form-group">
-                <button type="submit" class="btn btn-success" data-dismiss="modal" onclick="checkUser();">登录</button>
+                <input type="password" value="" class="form-control" name="password" id="register-input-password" placeholder="请输入密码">
+              </div>
+              <div class="form-group">
+                <input type="password" value="" class="form-control" name="password" id="register-input-password-2" placeholder="请再次输入密码">
+              </div>
+              <div class="form-group">
+                <input type="submit" class="btn btn-success" data-dismiss="modal" onclick="checkRegisterUser();" value="注册" />
               </div>
             </form>
+              </div>
+            </div>
+
           </div>
         </div>
         <div class="modal-footer">
         </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
+      </div>
+    </div>
+  </div>
+
 
   <script src="static/js/jquery.min.js"></script>
   <script src="static/js/bootstrap.min.js"></script>
@@ -304,16 +347,25 @@
         var result = document.getElementById("input-name").value;
         var password = document.getElementById("input-password").value;
 
-        if(result == ""  ){
-          alert("用户名不能为空");
+        if(result == "" || password == ""  ){
+          alert("用户名和密码不能为空");
           return false;
         }   
-        if(password == ""  ){
+        else if(password == ""  ){
           alert("密码不能为空");
          return false;
         }
-        document.getElementById("login-form").submit();
-    }  
+        $("#login-form").submit();
+    } 
+
+      function checkRegisterUser(){
+        var email_register = document.getElementById("register-input-email").value;
+        var username_register = document.getElementById("register-input-username").value;
+        var password_register = document.getElementById("register-input-password").value;
+        var password2_register = document.getElementById("register-input-password-2").value;
+
+        $("#register-form").submit();
+      } 
 </script> 
 
 </body>
