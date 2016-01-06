@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from GraduateProject import app, db
-from course import Course
+import course
 
 class Category(db.Model):
 	__tablename__ = 'category'
