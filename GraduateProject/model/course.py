@@ -13,4 +13,4 @@ class Course(db.Model):
 	lectures = db.relationship('Lecture', backref='course')
 
 	def __repr__(self):
-		return '<Course %r>' % (self.coursename)
+		return '<Course %r>' % (self.course_name)
