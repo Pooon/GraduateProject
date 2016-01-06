@@ -94,7 +94,7 @@
     <button type="submit" class="btn btn-default">搜索</button>
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <script type="text/javascript">
-      alert(current_user.username);
+      alert({{current_user.username}});
     </script>
     {% if current_user.is_authenticated %}
     <p> {{ current_user.username}} </p>
