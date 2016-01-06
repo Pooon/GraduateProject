@@ -12,4 +12,4 @@ class Lecture(db.Model):
 	video_url = db.Column(db.String(600))
 
 	def __repr__(self):
-		return '<Lecture %r>' % (self.coursename)
+		return '<Lecture %r>' % (self.lecture_name)
