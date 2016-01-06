@@ -1,8 +1,3 @@
-import homepage
-import user
-import category
-import course
-
 from flask import Blueprint, jsonify
 
 api = Blueprint('/api', __name__, template_folder='')
@@ -36,3 +31,8 @@ def handle_403(e):
 @api.errorhandler(404)
 def handle_404(e):
     return jsonify(stat=0, **G_ERR['404']), 404
+
+import homepage
+import user
+import category
+import course
