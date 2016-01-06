@@ -20,6 +20,6 @@ def getCourseDetail():
     course = Course.query.get(int(course_id))
 
     if course is not None:
-        return render_template('lecturePlaying.html',course = course)
+        return render_template('LecturePlaying.html',course = course)
 
     return jsonify(stat=0,**Error.ID_ERROR), 400
