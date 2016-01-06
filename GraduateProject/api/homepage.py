@@ -3,10 +3,10 @@ from GraduateProject import app
 from GraduateProject.model.course import Course
 from flask import request, jsonify
 
-@app.route('/homePage')
+@app.route('/home')
 def getHompage():
 	
-	return render_template('FirstPage.html')
+	return render_template('home.html')
 
 
 @app.route('/allCourse',methods=['GET'])
