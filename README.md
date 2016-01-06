@@ -52,3 +52,14 @@ catrgory|
 category_id|
 title|
 
+###Lecture
+lecture|
+-------|
+lecture_id|
+lecture_name|
+order|
+lecture_abstract|
+course_id|
+video_url|
+
+
