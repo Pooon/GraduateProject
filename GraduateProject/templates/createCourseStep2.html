@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MCourses</title>
     <!-- CSS -->
-    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
       <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -59,9 +59,9 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">全部课程</a></li>
-            <li><a href="#">我的课程</a></li>
-            <li><a href="#">我要开课</a></li>
+            <li><a href="allCourses">全部课程</a></li>
+            <li><a href="myCourses">我的课程</a></li>
+            <li><a href="createCourse">我要开课</a></li>
             <!-- <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -170,13 +170,13 @@
       </div>
 
       <br>
-      <a href="./TeachingStep1_1.html">
-      <div class="btn btn-primary btn-lg" title="上一步" ng-disabled="disableJump" validation-submit="Form" ng-click="saveAndRedirect('/TeachingStep1.html')">
+      <a href="static/createCourseStep1.html">
+      <div class="btn btn-primary btn-lg" title="上一步" ng-disabled="disableJump" validation-submit="Form" ng-click="saveAndRedirect('/createCourseStep1.html')">
         上一步
       </div>
       </a>
-      <a href="./TeachingStep3_1.html">
-      <div class="btn btn-primary btn-lg" title="保存并下一步" ng-disabled="disableJump" validation-submit="Form" ng-click="saveAndRedirect('/TeachingStep3.html')">
+      <a href="static/createCourseStep3.html">
+      <div class="btn btn-primary btn-lg" title="保存并下一步" ng-disabled="disableJump" validation-submit="Form" ng-click="saveAndRedirect('/createCourseStep3.html')">
         下一步
       </div>
       </a>
@@ -251,7 +251,7 @@
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
-    <script src="./js/jquery.min.js"></script>
-    <script src="./js/bootstrap.min.js"></script>
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
   </body>
 </html>
