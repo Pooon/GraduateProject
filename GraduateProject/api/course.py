@@ -50,7 +50,7 @@ def lecturePlaying():
         return render_template('lecturePlaying.html',course = course,lecture = lectures)
 
     return jsonify(stat=0,**Error.ID_ERROR), 400
-    
+
 @app.route('/testCourseDetail',methods=['GET'])
 def testGetCourseDetail():
 

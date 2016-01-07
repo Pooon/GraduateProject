@@ -13,3 +13,8 @@ def getHompage():
 def allCourse():
 
 	return render_template('allCourses.html')
+
+@app.route('/createCourse',methods=['GET'])
+def createCourse():
+    
+    return render_template('Teaching.html')
