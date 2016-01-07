@@ -24,17 +24,17 @@ def createCourse():
     
     return render_template('createCourse.html')
 
-@app.route('/createCourseStep1',methods=['GET'])
-def createCourseStepOne():
+@app.route('/createCourseStepFirst',methods=['GET'])
+def createCourseStepFirst():
 	
-	return render_template('createCourseStep1.html')
+	return render_template('createCourseStepFirst.html')
 
-@app.route('createCourseStep2',methods=['GET'])
+@app.route('/createCourseStepSecond',methods=['GET'])
 def createCourseStepSecond():
 	
-	return render_template('createCourseStep2.html')
+	return render_template('createCourseStepSecond.html')
 
-@app.route('createCourseStep3',methods=['GET'])
+@app.route('/createCourseStepThird',methods=['GET'])
 def createCourseStepThird():
 	
-	return render_template('createCourseStep3.html')
+	return render_template('createCourseStepThird.html')
