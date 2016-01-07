@@ -136,11 +136,9 @@
             </li>
          </ul>
          <ul class="list-group">
-          <li class="list-group-item"><span class="badge">正在学习</span><h4>第一节</h4>初始C程序<span style="float:right">60分钟</span></li>
-          <li class="list-group-item"><h4>第二节</h4>C中的数据类型<span style="float:right">60分钟</span></li>
-          <li class="list-group-item"><h4>第三节</h4>C中的运算符<span style="float:right">60分钟</span></li>
-          <li class="list-group-item"><h4>第四节</h4>C程序结构语句<span style="float:right">60分钟</span></li>
-          <li class="list-group-item"><h4>第五节</h4>函数的秘密<span style="float:right">60分钟</span></li>
+          {% for aLecture in lecture %}
+          <li class="list-group-item"><h4>第{{aLecture.order}}节&nbs{{aLecture.lecture_name}}</h4></li>
+          {% endfor %}
         </ul>
       </div>
    </div>
