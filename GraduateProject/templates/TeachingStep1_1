@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh" lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MCourses</title>
+    <!-- CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+      body{
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+      .carousel{
+        height: 300px;
+        background-color:#000; 
+        margin-bottom: 20px;
+      }
+      .carousel .item{
+        height: 300px;
+        background-color:#000; 
+      }
+      .carousel img{
+        width: 100%;
+        background-color:#000; 
+      }
+      #introduction-container .col-md-3{
+        text-align: center;
+      }
+      .divider{
+        margin:40px 0; 
+      }
+      .modal-footer{
+        border-top: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top"  style="background:white">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- <a class="navbar-brand" href="./images/logo.png"></a> -->
+          <img src="./images/logo3.png">
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">全部课程</a></li>
+            <li><a href="#">我的课程</a></li>
+            <li><a href="#">我要开课</a></li>
+            <!-- <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li> -->
+          </ul>
+
+
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="请输入关键字进行搜索">
+            </div>
+            <button type="submit" class="btn btn-default">搜索</button>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <button class="btn btn-primary" data-toggle="modal" data-target="#enter">登录/注册</button>
+          </form>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    
+    
+   <div class="container" style="margin-top:50px;">
+      <ul class="nav nav-pills nav-justified">
+        <li class="active">
+         <a href="#">课程信息</a>
+        </li>
+        <li>
+         <a href="#">课程内容</a>
+        </li>
+       <li>
+        <a href="#">发布课程</a>
+       </li>
+      </ul>
+      <h3>添加或修改您的课程信息</h3>
+
+      <div class="form-group">
+        <label class="title"><span class="necessary">*</span>课程名称</label>
+        <input type="text" class="form-control input-with-count ng-isolate-scope ng-dirty ng-valid ng-valid-title" name="title" placeholder="课程名称" ng-model="course.title" validator="required" required-error-message="请输入课程名称" maxlength="30">
+      </div>
+
+      <div class="form-group">
+        <label class="title"><span class="necessary">*</span>课程概况</label>
+        <textarea class="form-control input-with-count ng-isolate-scope ng-pristine ng-invalid ng-invalid-overview" name="overview" placeholder="课程概况" rows="4" ng-model="course.overview" validator="required" required-error-message="请输入课程概况" maxlength="300"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="title"><span class="necessary">*</span>添加/更改课程封面图</label>
+        <div class="row" ng-hide="iconUploading">
+          <div class="col-sm-7 col-md-8">
+          <input type="text" class="form-control input-filename ng-isolate-scope ng-dirty ng-valid ng-valid-bg-url" name="bgUrl" placeholder="选择图片" readonly="" ng-model="course.web_bgImgUrl" validator="required" required-error-message="请上传课程封面图">
+          </div>
+          <div class="col-sm-5 col-md-4 text-right">
+            <div class="btn-group">
+              <button type="button" class="btn btn-default">封面预览</button>
+              <button type="button" class="btn btn-primary">上传图像</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="title"><span class="necessary">*</span>所属类别</label></br>
+        <form class="bs-example bs-example-form" role="form">
+          <div class="row">
+        <div class="col-lg-4">
+            <div class="input-group">
+               <input type="text" class="form-control">
+               <div class="input-group-btn">
+                  <button type="button" class="btn btn-default 
+                     dropdown-toggle" data-toggle="dropdown">
+                     下拉菜单 
+                     <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu pull-right">
+                     <li><a href="#">计算机与互联网</a></li>
+                     <li><a href="#">金融与经济</a></li>
+                     <li><a href="#">人文与社会</a></li>
+                     <li><a href="#">语言与文化</a></li>
+                     <li><a href="#">艺术与体育</a></li>
+                     <li class="divider"></li>
+                     <li><a href="#">其他</a></li>
+                  </ul>
+               </div><!-- /btn-group -->
+            </div><!-- /input-group -->
+         </div><!-- /.col-lg-6 -->
+       </div>
+       </form>
+      </div>
+    </br></br></br></br></br></br>
+
+      <a href="./TeachingStep2_1.html">
+      <div class="btn btn-primary btn-lg" title="保存并下一步" ng-disabled="disableJump" validation-submit="Form" ng-click="saveAndRedirect('/TeachingStep2.html')">
+        下一步
+      </div>
+      </a>
+
+    </div>
+
+
+
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+          <ul class="nav navbar-nav">
+            <li><a>版权：毕业小分队</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#about-us">关于我们</a></li>
+            <li><a href="#">问题反馈</a></li>
+            <li><a href="#">帮助中心</a></li>
+          </ul>
+      </div>
+    </nav>
+
+    <div class="modal fade" id="about-us">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">关于我们</h4>
+          </div>
+          <div class="modal-body">
+            <p>这是我们毕业小分队的毕业设计网站：MCourses,我们会慢慢完善的……</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-dismiss="modal">了解了</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="enter">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="login-title" style="text-align:center">
+              <h4>登录</h4>
+            </div>
+            <div class="login-body">
+              <form id="login-form" action="#" method="post">
+                <div class="form-group">
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="请输入手机或邮箱">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputPassword3" placeholder="请输入密码">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox"> 记住我的用户名
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-success" data-dismiss="modal">了解了</button>
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+  </body>
+</html>
