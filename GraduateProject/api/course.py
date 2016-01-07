@@ -16,7 +16,7 @@ class Error(object):
                      'msg': 'Course is not permitted'}
 
 
-@app.route('/courseDetail',methods=['GET'])
+@app.route('/courseInfo',methods=['GET'])
 def getCourseDetail():
 
     course_id = request.args.get('courseId','',type=str)
@@ -25,10 +25,23 @@ def getCourseDetail():
     lectures = Lecture.query.filter_by(course_id = course_id).order_by(Lecture.lecture_id)
 
     if course is not None and lectures is not None:
-        return render_template('LecturePlaying.html',course = course,lecture = lectures)
+        return render_template('courseInfo.html',course = course,lecture = lectures)
 
     return jsonify(stat=0,**Error.ID_ERROR), 400
 
+@app.route('/lecurePlaying',methods=['GET'])
+def lecturePlaying():
+
+    course_id = request.args.get('courseId','',type=str)
+    course = Course.query.get(int(course_id))
+
+    lectures = Lecture.query.filter_by(course_id = course_id).order_by(Lecture.lecture_id)
+
+    if course is not None and lectures is not None:
+        return render_template('lecurePlaying.html',course = course,lecture = lectures)
+
+    return jsonify(stat=0,**Error.ID_ERROR), 400
+    
 @app.route('/testCourseDetail',methods=['GET'])
 def testGetCourseDetail():
 
