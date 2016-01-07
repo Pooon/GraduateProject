@@ -14,12 +14,17 @@ def allCourse():
 
 	return render_template('allCourses.html')
 
+@app.route('/myCourses',methods=['GET'])
+def myCourses():
+
+	return render_template('myCourses.html')
+
 @app.route('/createCourse',methods=['GET'])
 def createCourse():
     
     return render_template('createCourse.html')
 
-@app.route('/myCourses',methods=['GET'])
-def myCourses():
-
-	return render_template('myCourses.html')
+@app.route('/createCourseStep1',methods=['GET'])
+def createCourseStep1():
+	
+	return render_template('createCourseStep1.html')
