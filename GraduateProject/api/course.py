@@ -7,6 +7,7 @@ from . import ERROR_COURSE
 from GraduateProject.model.course import Course
 from GraduateProject.model.lecture import Lecture
 from GraduateProject.model.user import User
+from GraduateProject.model.category import Category
 
 class Error(object):
     ID_ERROR = {'err': ERROR_COURSE + 1,
@@ -26,9 +27,14 @@ def getCourseDetail():
     if course is not None:
         lectures = Lecture.query.filter_by(course_id = course_id).order_by(Lecture.lecture_id)
         user = User.query.get(int(course.tutor_id))
+        category = Category.query.get(int(course.category_id))
 
         if lectures is not None and user is not None:
-            return render_template('courseInfo.html',course = course,lecture = lectures,user = user)
+            return render_template('courseInfo.html',
+                                    course = course,
+                                    lecture = lectures,
+                                    user = user,
+                                    category = category)
 
     return jsonify(stat=0,**Error.ID_ERROR), 400
 
