@@ -29,7 +29,7 @@ def getCourseDetail():
 
     return jsonify(stat=0,**Error.ID_ERROR), 400
 
-@app.route('/lecurePlaying',methods=['GET'])
+@app.route('/lecturePlaying',methods=['GET'])
 def lecturePlaying():
 
     course_id = request.args.get('courseId','',type=str)
@@ -38,7 +38,7 @@ def lecturePlaying():
     lectures = Lecture.query.filter_by(course_id = course_id).order_by(Lecture.lecture_id)
 
     if course is not None and lectures is not None:
-        return render_template('lecurePlaying.html',course = course,lecture = lectures)
+        return render_template('lecturePlaying.html',course = course,lecture = lectures)
 
     return jsonify(stat=0,**Error.ID_ERROR), 400
     
