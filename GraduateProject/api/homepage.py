@@ -17,7 +17,7 @@ def allCourse():
 @app.route('/createCourse',methods=['GET'])
 def createCourse():
     
-    return render_template('Teaching.html')
+    return render_template('createCourse.html')
 
 @app.route('/myCourses',methods=['GET'])
 def myCourses():
