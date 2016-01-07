@@ -28,3 +28,13 @@ def createCourse():
 def createCourseStep1():
 	
 	return render_template('createCourseStep1.html')
+
+@app.route('createCourseStep2',methods=['GET'])
+def createCourseStep2():
+	
+	return render_template('createCourseStep2.html')
+
+@app.route('createCourseStep3',methods=['GET'])
+def createCourseStep3():
+	
+	return render_template('createCourseStep3.html')
