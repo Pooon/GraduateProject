@@ -106,7 +106,7 @@
             <div class="media-body" style="line-height:50px;">
                <h1 class="media-heading" style="margin-top:50px;">
                   {{ course.course_name }}
-               </h1> 共5节课，3小时</br>教师：Alex Wong</br>分类：计算机与互联网 移动开发
+               </h1> 共5节课，3小时</br>教师：{{user.username}}</br>分类：计算机与互联网 移动开发
             </div>
          </div>
          <div class="row-fluid">
@@ -129,7 +129,7 @@
                    <a href="#" class="pull-left"><img src="static/images/avatar.jpg" class="media-object" alt='' style="width:250px;margin:0 auto"></a>
                   <div class="media-body">
                      <h2 class="media-heading" style="text-align:center;">
-                        授课教师：Alex Wong
+                        授课教师{{user.username}}
                      </h2> <p>简介：GoodGoodGoodGoodGoodGoodGood!</p>
                   </div>
                </div>
