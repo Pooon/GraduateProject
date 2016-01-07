@@ -18,3 +18,8 @@ def allCourse():
 def createCourse():
     
     return render_template('Teaching.html')
+
+@app.route('/myCourse',methods=['GET'])
+def myCourse():
+
+	return render_template('myCourse.html')
