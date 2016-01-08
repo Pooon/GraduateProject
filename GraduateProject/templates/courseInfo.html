@@ -102,29 +102,38 @@
    <div class="row-fluid">
       <div class="sol-sm-12 col-md-12">
          <div class="media well">
-             <a href="#" class="pull-left"><img src="static/images/course2.jpg" class="media-object" alt='' style="width:500px;"></a>
-            <div class="media-body" style="line-height:50px;">
-               <h1 class="media-heading" style="margin-top:50px;">
-                  {{ course.course_name }}
-               </h1> 共5节课，3小时</br>教师：{{user.username}}</br>分类：{{category.title}}
+           <a href="lecturePlaying?courseId=1" class="pull-left"><img src="static/images/course2.jpg" class="media-object" alt='' style="width:500px;"></a>
+           <div class="media-body" style="line-height:50px;">
+             <h1 class="media-heading" style="margin-top:50px;">
+              {{ course.course_name }}
+            </h1> 共5节课，3小时</br>教师：{{user.username}}</br>分类：{{category.title}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-8">
+           <ul class="nav nav-tabs nav-justified" role="tablist">
+            <li id="intro-li" class="active"><a href="#intro-tab" role="tab" data-toggle="tab">介绍</a></li>
+            <li id="index-li"><a href="#index-tab" role="tab" data-toggle="tab">目录</a></li>
+          </ul>
+
+            <div class="tab-content" id="intro-index-tap">
+              <div class="tab-pane active" id="intro-tab">
+                <p style="margin-top:30px;margin-left:30px;">{{ course.course_abstract }}</p>
+              </div>
+              <div class="tab-pane" id="index-tab">
+                <div>
+                 <ul class="list-group">
+                  {% for aLecture in lecture %}
+                  <li class="list-group-item"><a href="lecturePlaying?courseId=1">第{{aLecture.order}}节 {{aLecture.lecture_name}}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
             </div>
-         </div>
-         <div class="row-fluid">
-            <div class="col-sm-12 col-md-8">
-               <ul class="nav nav-tabs nav-justified">
-                  <li class="active">
-                     <a href="#">介绍</a> 
-                  </li>
-                  <li>
-                     <a href="#">目录</a> 
-                  </li>
-                  <li>
-                     <a href="#">讨论</a> 
-                  </li>
-               </ul>
-               <p style="margin-top:30px;margin-left:30px;">{{ course.course_abstract }}</p>
-            </div>
-            <div class="col-sm-12 col-md-4">
+          </div>
+
+        </div>
+
+            <div class="col-sm-4 col-md-4">
                <div class="media well">
                    <a href="#" class="pull-left"><img src="static/images/avatar.jpg" class="media-object" alt='' style="width:250px;margin:0 auto"></a>
                   <div class="media-body">
@@ -134,6 +143,7 @@
                   </div>
                </div>
             </div>
+
          </div>
       </div>
    </div>
