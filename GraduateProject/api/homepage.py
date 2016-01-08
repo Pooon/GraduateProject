@@ -9,7 +9,7 @@ def getHompage():
 	return render_template('home.html')
 
 
-@app.route('/allCourse',methods=['GET'])
+@app.route('/allCourses',methods=['GET'])
 def allCourse():
 
 	return render_template('allCourses.html')

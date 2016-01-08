@@ -32,10 +32,17 @@
       }
       .navbar{
       margin-bottom: 0;
-    }
-    .main{
-      background-color: #f5f5f5;
-    }
+      }
+      .main{
+        background-color: #f5f5f5;
+      }
+      .table{
+        background-color: white;
+        border-style: solid white;
+      }
+      .thumbnail{
+
+      }
       </style>
     </head>
 
@@ -77,24 +84,35 @@
         <div class="container" id="allcourses-container">
           <div class="row">
             <div class="col-sm-2 nav-sidebar collapsed">
-              <table class="table table-hover">
-                <tr>
-                  <td>
-                    <img src="static/images/list2.png" width="16px" height="14px">
-                    <span class="courses-text"><a href="###">全部课程</a></span>
-                    <div class="inn">
-                      <a href="http://www.baidu.com" target="_Blank" class="link-item">计算机与互联网</a>
-                      <a href="http://www.baidu.com" target="_Blank" class="link-item-child">移动开发</a>
-                      <a href="http://www.baidu.com" target="_Blank" class="link-item-child">Web开发</a>
-                      <a href="http://www.baidu.com" target="_Blank" class="link-item-child">数据结构</a>
-                    </div>
-                  </td>
+              <div class="list-group">
+                <a href="#" class="list-group-item active">
+                  <h4 class="list-group-item-heading"><img src="static/images/list2.png" width="16px" height="14px">&nbsp&nbsp全部课程</h4>
+                </a>
+                
+                <a href="#" class="list-group-item">
+                  <h5 class="list-group-item-heading">计算机与互联网</h5>
+                  <!-- <h6 class="list-group-item-text">移动开发&nbspWeb开发&nbsp数据结构</h6> -->
+                </a>
 
-                </tr>
-              </table>
+                <a href="#" class="list-group-item">
+                  <h5 class="list-group-item-heading">金融与经济</h5>
+                </a>
 
+                <a href="#" class="list-group-item">
+                  <h5 class="list-group-item-heading">人文与社会</h5>
+                </a>
+
+                <a href="#" class="list-group-item">
+                  <h5 class="list-group-item-heading">语言与文化</h5>
+                </a>
+
+                <a href="#" class="list-group-item">
+                  <h5 class="list-group-item-heading">艺术与体育</h5>
+                </a>
+
+              </div>
             </div>
-            <div class="col-sm-10" style="background:grey">
+            <div class="col-sm-10" style="background:white">
               <div class="row">
                 <div class="col-sm-6 col-md-3">
                   <div class="thumbnail">
@@ -171,15 +189,17 @@
                 </div>
 
                 <!--分页-->
-                <ul class="pagination">
-                  <li><a href="#">&laquo;</a></li>
-                  <li class="active"><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
-                  <li><a href="#">&raquo;</a></li>
-                </ul>
+                <div style="text-align:center">
+                  <ul class="pagination">
+                    <li><a href="#">&laquo;</a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">&raquo;</a></li>
+                  </ul>
+                </div>
               </div>
             </div>
         </div>
@@ -214,42 +234,67 @@
           </div>
         </div>
 
-      <div class="modal fade" id="enter">
-          <div class="modal-dialog">
+        <div class="modal fade" id="enter">
+          <div class="modal-dialog" style="width:400px">
             <div class="modal-content">
+              <div class="modal-header" style="text-align:center">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <ul class="nav nav-tabs" role="tablist">
+                  <li id="signin-li" class="active"><a href="#signin-tab" role="tab" data-toggle="tab">登录</a></li>
+                  <li id="signup-li"><a href="#signup-tab" role="tab" data-toggle="tab">注册</a></li>
+                </ul>
+              </div>
               <div class="modal-body">
-                <div class="login-title" style="text-align:center">
-                  <h4>登录</h4>
-                </div>
                 <div class="login-body">
-                  <form id="login-form" action="#" method="post">
-                    <div class="form-group">
-                      <div class="col-sm-10">
-                        <input type="email" class="form-control" id="inputEmail3" placeholder="请输入手机或邮箱">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword3" placeholder="请输入密码">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="col-sm-offset-2 col-sm-10">
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox"> 记住我的用户名
-                          </label>
+                  <div class="tab-content" id="signin-signup-tab">
+                    <div class="tab-pane active" id="signin-tab">
+                      <form id="login-form" method="post" action="login">
+                        <div class="form-group">
+                          <input type="name" value="" class="form-control" name="email" id="input-name" placeholder="请输入邮箱" >
                         </div>
-                      </div>
+                        <div class="form-group">
+                          <input type="password" value="" class="form-control" name="password" id="input-password" placeholder="请输入密码" AUTOCOMPLETE="off">
+                        </div>
+                        <div class="form-froup">
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox" name="remember_me"> 记住我的用户名
+                            </label>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <input type="submit" class="btn btn-success" data-dismiss="modal" onclick="checkUser();" value="登录" />
+                        </div>
+                      </form>
                     </div>
-                    <button type="button" class="btn btn-success" data-dismiss="modal">了解了</button>
-                  </form>
+
+                    <div class="tab-pane" id="signup-tab">
+                      <form id="register-form" method="post" action="register">
+                        <div class="form-group">
+                          <input type="name" value="" class="form-control" name="email" id="register-input-email" placeholder="请输入登录邮箱" AUTOCOMPLETE="off">
+                        </div>
+                        <div class="form-group">
+                          <input type="name" value="" class="form-control" name="username" id="register-input-username" placeholder="请输入昵称"  AUTOCOMPLETE="off">
+                        </div>
+                        <div class="form-group">
+                          <input type="password" value="" class="form-control" name="password" id="register-input-password" placeholder="请输入密码" AUTOCOMPLETE="off">
+                        </div>
+                        <div class="form-group">
+                          <input type="password" value="" class="form-control" name="password" id="register-input-password-2" placeholder="请再次输入密码"  AUTOCOMPLETE="off">
+                        </div>
+                        <div class="form-group">
+                          <input type="submit" class="btn btn-success" data-dismiss="modal" onclick="checkRegisterUser();" value="注册" />
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+
                 </div>
               </div>
               <div class="modal-footer">
               </div>
-            </div><!-- /.modal-content -->
-          </div><!-- /.modal-dialog -->
+            </div>
+          </div>
         </div>
 
         <script src="static/js/jquery.min.js"></script>

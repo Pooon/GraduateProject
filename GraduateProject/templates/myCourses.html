@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MCourses</title>
+  <title>MCourses - 我的课程</title>
   <!-- CSS -->
   <link href="static/css/bootstrap.min.css" rel="stylesheet">
   <!-- <link rel="stylesheet" type="text/css" href="static/css/allCourses.css"/> -->
@@ -14,24 +14,34 @@
       <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
       <![endif]-->
       <style type="text/css">
-      body{
-        padding-top: 50px;
-      }
-      .footer-text{
-      padding-top: 10px;
-      }
-      .row{
-        padding-top: 20px;
-      }
-      .modal-footer{
-        border-top: none;
-      }
-      .navbar{
-      margin-bottom: 0;
-    }
-    .main{
-      background-color: #f5f5f5;
-    }
+        body{
+          padding-top: 50px;
+        }
+        .footer-text{
+          padding-top: 10px;
+        }
+        .row{
+          padding-top: 20px;
+        }
+        .modal-footer{
+          border-top: none;
+        }
+        .navbar{
+          margin-bottom: 0;
+        }
+        .main{
+          background-color: #f5f5f5;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          
+        }
+        #mycourses-container{
+          background-color: white;
+          min-height: 800px;
+        }
+        .nav-tabs{
+          padding-top: 10px;
+        }
       </style>
     </head>
 
@@ -52,7 +62,7 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
               <li><a href="home">首页</a></li>
-              <li><a href="allCourse">全部课程 <span class="sr-only">(current)</span></a></li>
+              <li><a href="allCourses">全部课程 <span class="sr-only">(current)</span></a></li>
               <li  class="active"><a href="#">我的课程</a></li>
               <li><a href="createCourse">我要开课</a></li>
             </ul>
@@ -70,79 +80,181 @@
       </nav>
 
       <div class="main">
-        <div class="container" id="allcourses-container">
-          
+        <div class="container" id="mycourses-container">
+        <div class="container-head">
+          <ul class="nav nav-tabs" role="tablist">
+            <li id="study-li" class="active"><a href="#study-tab" role="tab" data-toggle="tab">学习</a></li>
+            <li id="teach-li"><a href="#teach-tab" role="tab" data-toggle="tab">教学</a></li>
+          </ul>
         </div>
-      </div>
-
-      <div class="navbar navbar-default navbar-static-bottom" role="navigation" style="background-color:#e5e5e5">
-          <div class="container">
-            <ul class="nav navbar-nav">
-              <li><a>© 毕业小分队&nbsp&nbsp&nbsp</a></li>
-              <li><a href=""class="footer-text" data-toggle="modal" data-target="#about-us">关于我们</a></li>
-            </ul>
-            <a href="#top" class="footer-text" style="float:right">
-              回到顶部
-            </a>
-          </div>
-      </div>
-
-      <div class="modal fade" id="about-us">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">关于我们</h4>
-              </div>
-              <div class="modal-body">
-                <p>这是我们毕业小分队的毕业设计网站：MCourses,我们会慢慢完善的……</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-dismiss="modal">了解了</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      <div class="modal fade" id="enter">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-body">
-                <div class="login-title" style="text-align:center">
-                  <h4>登录</h4>
-                </div>
-                <div class="login-body">
-                  <form id="login-form" action="#" method="post">
-                    <div class="form-group">
-                      <div class="col-sm-10">
-                        <input type="email" class="form-control" id="inputEmail3" placeholder="请输入手机或邮箱">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword3" placeholder="请输入密码">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="col-sm-offset-2 col-sm-10">
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox"> 记住我的用户名
-                          </label>
+          <div class="tab-content" id="study-teach-tab">
+            <div class="tab-pane active" id="study-tab">
+              <div class="row">
+                <div class="col-sm-6 col-md-3">
+                  <div class="thumbnail">
+                    <a href="#"><img src="static/images/course1.jpg"></a>
+                    <div class="caption">
+                      <h4>财务管理</h4>
+                      <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                          60%
                         </div>
                       </div>
                     </div>
-                    <button type="button" class="btn btn-success" data-dismiss="modal">了解了</button>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                  <div class="thumbnail">
+                    <a href="#"><img src="static/images/course2.jpg"></a>
+                    <div class="caption">
+                      <h4>C语言程序设计</h4>
+                      <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
+                          20%
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                  <div class="thumbnail">
+                    <a href="#"><img src="static/images/course3.jpg"></a>
+                    <div class="caption">
+                      <h4>物联网概论</h4>
+                      <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+                          30%
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane" id="teach-tab">
+              <div class="row">
+                <div class="col-sm-6 col-md-3">
+                  <div class="thumbnail">
+                    <a href="#"><img src="static/images/course4.png"></a>
+                    <div class="caption">
+                      <h4>数据结构</h4>
+                      <p><a href="#" class="glyphicon glyphicon-user">&nbsp100人参加</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--分页-->
+          <div style="text-align:center">
+            <ul class="pagination">
+              <li><a href="#">&laquo;</a></li>
+              <li class="active"><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">&raquo;</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar navbar-default navbar-static-bottom" role="navigation" style="background-color:#e5e5e5">
+      <div class="container">
+        <ul class="nav navbar-nav">
+          <li><a>© 毕业小分队&nbsp&nbsp&nbsp</a></li>
+          <li><a href=""class="footer-text" data-toggle="modal" data-target="#about-us">关于我们</a></li>
+        </ul>
+        <a href="#top" class="footer-text" style="float:right">
+          回到顶部
+        </a>
+      </div>
+    </div>
+
+    <div class="modal fade" id="about-us">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">关于我们</h4>
+          </div>
+          <div class="modal-body">
+            <p>这是我们毕业小分队的毕业设计网站：MCourses,我们会慢慢完善的……</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-dismiss="modal">了解了</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="enter">
+      <div class="modal-dialog" style="width:400px">
+        <div class="modal-content">
+          <div class="modal-header" style="text-align:center">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <ul class="nav nav-tabs" role="tablist">
+              <li id="signin-li" class="active"><a href="#signin-tab" role="tab" data-toggle="tab">登录</a></li>
+              <li id="signup-li"><a href="#signup-tab" role="tab" data-toggle="tab">注册</a></li>
+            </ul>
+          </div>
+          <div class="modal-body">
+            <div class="login-body">
+              <div class="tab-content" id="signin-signup-tab">
+                <div class="tab-pane active" id="signin-tab">
+                  <form id="login-form" method="post" action="login">
+                    <div class="form-group">
+                      <input type="name" value="" class="form-control" name="email" id="input-name" placeholder="请输入邮箱" >
+                    </div>
+                    <div class="form-group">
+                      <input type="password" value="" class="form-control" name="password" id="input-password" placeholder="请输入密码" AUTOCOMPLETE="off">
+                    </div>
+                    <div class="form-froup">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" name="remember_me"> 记住我的用户名
+                        </label>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <input type="submit" class="btn btn-success" data-dismiss="modal" onclick="checkUser();" value="登录" />
+                    </div>
+                  </form>
+                </div>
+
+                <div class="tab-pane" id="signup-tab">
+                  <form id="register-form" method="post" action="register">
+                    <div class="form-group">
+                      <input type="name" value="" class="form-control" name="email" id="register-input-email" placeholder="请输入登录邮箱" AUTOCOMPLETE="off">
+                    </div>
+                    <div class="form-group">
+                      <input type="name" value="" class="form-control" name="username" id="register-input-username" placeholder="请输入昵称"  AUTOCOMPLETE="off">
+                    </div>
+                    <div class="form-group">
+                      <input type="password" value="" class="form-control" name="password" id="register-input-password" placeholder="请输入密码" AUTOCOMPLETE="off">
+                    </div>
+                    <div class="form-group">
+                      <input type="password" value="" class="form-control" name="password" id="register-input-password-2" placeholder="请再次输入密码"  AUTOCOMPLETE="off">
+                    </div>
+                    <div class="form-group">
+                      <input type="submit" class="btn btn-success" data-dismiss="modal" onclick="checkRegisterUser();" value="注册" />
+                    </div>
                   </form>
                 </div>
               </div>
-              <div class="modal-footer">
-              </div>
-            </div><!-- /.modal-content -->
-          </div><!-- /.modal-dialog -->
-        </div>
 
-        <script src="static/js/jquery.min.js"></script>
-        <script src="static/js/bootstrap.min.js"></script>
-      </body>
-      </html>
+            </div>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+  </body>
+  </html>

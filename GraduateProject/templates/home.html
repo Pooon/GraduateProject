@@ -81,7 +81,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
-            <li><a href="allCourse">全部课程</a></li>
+            <li><a href="allCourses">全部课程</a></li>
             <li><a href="myCourses">我的课程</a></li>
             <li><a href="createCourse">我要开课</a></li>
           </ul>
@@ -149,19 +149,19 @@
       <div class="row">
         <div class="col-md-3">
           <img src="static/images/temp1.png">
-          <h2>temp1</h2>
+          <h2>功能点1</h2>
         </div>
         <div class="col-md-3">
           <img src="static/images/temp2.png">
-          <h2>temp2</h2>
+          <h2>功能点2</h2>
         </div>
         <div class="col-md-3">
           <img src="static/images/temp3.png">
-          <h2>temp3</h2>
+          <h2>功能点3</h2>
         </div>
         <div class="col-md-3">
           <img src="static/images/temp4.png">
-          <h2>temp4</h2>
+          <h2>功能点4</h2>
         </div>
       </div>
     </div>
@@ -175,7 +175,7 @@
               <img src="static/images/course1.jpg">
               <div class="caption">
                 <h4>财务管理</h4>
-                <p><a href="courseInfo?courseId=1" class="glyphicon glyphicon-user">&nbsp100人参加</a></p>
+                <p><a href="/courseInfo?courseId=1" class="glyphicon glyphicon-user">&nbsp100人参加</a></p>
               </div>
             </div>
           </div>
@@ -281,7 +281,6 @@
           <div class="modal-content">
             <div class="modal-header" style="text-align:center">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <!-- <h4 class="modal-title">登录</h4> -->
               <ul class="nav nav-tabs" role="tablist">
                 <li id="signin-li" class="active"><a href="#signin-tab" role="tab" data-toggle="tab">登录</a></li>
                 <li id="signup-li"><a href="#signup-tab" role="tab" data-toggle="tab">注册</a></li>
@@ -289,8 +288,6 @@
             </div>
             <div class="modal-body">
               <div class="login-body">
-
-
                 <div class="tab-content" id="signin-signup-tab">
                   <div class="tab-pane active" id="signin-tab">
                     <form id="login-form" method="post" action="login">
@@ -348,12 +345,12 @@
 
       <script type="text/javascript">  
       function checkUser(){
-        var result = document.getElementById("input-name").value;
-        var password = document.getElementById("input-password").value;
+        var result = $("input-name").value;
+        var password = $("input-password").value;
 
         if(result == "" || password == ""  ){
           alert("用户名和密码不能为空");
-
+          return false;
         }   
         else if(password == ""  ){
           alert("密码不能为空");
@@ -370,7 +367,24 @@
         var password_register = document.getElementById("register-input-password").value;
         var password2_register = document.getElementById("register-input-password-2").value;
 
-        $("#register-form").submit();
+        var testEmail = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+        if(email_register == "" || username_register == "" || password_register == "" || password2_register == ""){
+          alert("所有输入都不能为空！");
+          return false;
+        }   
+        else if(!testEmail.test(email_register)) {
+          alert("请输入有效的邮箱地址！");
+          return false;
+        }
+        else if (password_register == "") {
+          alert("密码不能为空！");
+        }
+        else if(password_register != password2_register){
+          alert("两次输入密码不一致！")；
+        }else{
+          alert("注册成功！");
+          $("#register-form").submit();
+        }
       } 
       </script> 
 
