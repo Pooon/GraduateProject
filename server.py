@@ -24,7 +24,7 @@ def createall():
 def updateCourse():
 	
 	course = Course.query.get(1)
-	course.update({course_name:'C语言程序设计'})
+	course.course_name = 'C语言程序设计'
 	db.session.commit()
 
 def make_shell_context():
